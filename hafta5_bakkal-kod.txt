@@ -1,0 +1,54 @@
+create database bakkalinyo3;
+go
+ use bakkalinyo3;
+go 
+create table musteri2(
+musteri_id int primary key,
+musteri_ad varchar(10),
+)
+create table bakkal2(
+bakkal_id int primary key,
+bakkal_ad varchar(10),
+urun_id int,
+musteri_id int,
+borc_id int,
+satis_id int,
+kasa_id int,
+)
+create table stoklar2(
+urun_id int primary key,
+urun_ad varchar(10),
+urun_adedi int,
+)
+create table borclar2(
+borc_id int primary key,
+borclunun_adi varchar(10),
+musterinin_borcu smallmoney,
+toptanciya_borc smallmoney,
+)
+create table toptancilar(
+kasa_id int primary key,
+kasa_adedi int,
+kasa_fiyati smallmoney,
+toptanci_ad varchar(10),
+)
+create table satislar(
+satis_id int primary key,
+urun_satis_fiyati smallmoney,
+musteri_id int,
+borc_id int,
+)
+update musteri2
+set musteri_ad=7
+where musteri_id=5;
+
+insert into borclar2 (borc_id,borclunun_adi)
+values (5,40);
+
+delete from musteri2
+where musteri_id=3;
+
+select musteri_ad
+from musteri2
+where musteri_id=6;
+ 
